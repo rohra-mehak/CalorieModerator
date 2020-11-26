@@ -45,7 +45,14 @@
             android:name=".googleSignIn"
             android:screenOrientation="portrait">
         </activity>
-
+        <activity
+            android:name=".DobActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".QuestionnaireActivity"
+            android:screenOrientation="portrait">
+        </activity>
 
     </application>
 

@@ -69,11 +69,17 @@ class registerActivity: AppCompatActivity() {
     }
 
     // Executed when Sign Up button is pressed.
-    fun signUp(v: View) {
-        attemptRegistration()
+    fun signUp(v: View) { // TODO uncomment IF: I had to comment it out becauyse my device doesnt want to crate user xD
+    //    if(attemptRegistration()){
+            val intent = Intent(this, com.e.myapplication.DobActivity::class.java)
+            finish()
+            startActivity(intent)
+  //      } else {
+            // TODO
+   //     }
     }
 
-    private fun attemptRegistration() {
+    private fun attemptRegistration(): Boolean {
         // Reset errors displayed in the form.
         mEmailView?.setError(null)
         mPasswordView?.setError(null)
@@ -104,8 +110,9 @@ class registerActivity: AppCompatActivity() {
             if (focusView != null) {
                 focusView.requestFocus()
             }
+            return false
         } else {
-            CreateFirebaseUser()
+            return CreateFirebaseUser()
             // TODO: Call create FirebaseUser() here
         }
     }
@@ -126,19 +133,19 @@ class registerActivity: AppCompatActivity() {
         val DISPLAY_NAME_KEY = "username"
     }
 
-    private fun CreateFirebaseUser() {
+    private fun CreateFirebaseUser(): Boolean {
         val email = mEmailView?.getText().toString()
         // val email1 = mEmailView?.text.toString()
         val password = mPasswordView?.getText().toString()
+        var isSuccess = false
         mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this) { task ->
             Log.d("sucesss", "on complete" + task.isSuccessful)
             if (!task.isSuccessful) {
                 Log.d("fail", "user creation failed" + task.isSuccessful)
             }
-
+            isSuccess = task.isSuccessful
         }
-
-
+        return isSuccess
     }
 
     //start google sigh in  if button pressed

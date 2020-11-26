@@ -66,8 +66,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="#00FFFFFF"
+                        android:hint="your height (cm)"
+                        android:inputType="number"
                         android:paddingLeft="20px"
-                        android:text="your height (cm)"
                         android:textColor="#FFFFFF"
                         android:textColorHighlight="#FFFFFF"
                         android:textColorHint="#FFFFFF"
@@ -95,8 +96,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="#00FFFFFF"
+                        android:hint="weight (kg)"
+                        android:inputType="number"
                         android:paddingLeft="20px"
-                        android:text="weight (kg)"
                         android:textColor="#FFFFFF"
                         android:textColorHighlight="#FFFFFF"
                         android:textColorHint="#FFFFFF"
@@ -118,6 +120,7 @@
                     android:textSize="18sp" />
 
                 <RadioGroup
+                    android:id="@+id/gender_radio_group"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
@@ -146,7 +149,7 @@
                 </RadioGroup>
 
                 <Button
-                    android:id="@+id/next_button"
+                    android:id="@+id/next_questionaire_button"
                     android:layout_width="203dp"
                     android:layout_height="34dp"
                     android:layout_marginLeft="70dp"
