@@ -1,57 +1,221 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bc"
-    android:orientation="vertical"
-    >
+    android:background="@drawable/gradient"
+    android:orientation="vertical">
 
-    <com.google.android.material.textfield.TextInputLayout
+
+    <RelativeLayout
+        android:id="@+id/main_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="194dp">
+        android:layout_height="match_parent"
+        android:background="@drawable/gradient">
 
-        <AutoCompleteTextView
-            android:id="@+id/login_email"
-            android:layout_width="350dp"
-            android:layout_height="41dp"
-            android:text="email"
-            tools:layout_editor_absoluteX="-4dp"
-            tools:layout_editor_absoluteY="126dp" />
+        <ImageView
+            android:id="@+id/background_runner"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.3"
+            app:srcCompat="@drawable/runner" />
 
-    </com.google.android.material.textfield.TextInputLayout>
+        <RelativeLayout
+            android:id="@+id/login_center_ayout"
+            android:layout_width="346dp"
+            android:layout_height="517dp"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="36dp"
+            android:background="@drawable/gradient_white">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="31dp"
-        tools:layout_editor_absoluteY="235dp">
+            <LinearLayout
+                android:id="@+id/login_center_linearlayout"
+                android:layout_width="match_parent"
 
-        <EditText
-            android:id="@+id/login_password"
-            android:layout_width="350dp"
-            android:layout_height="41dp"
-            android:text="password" />
-    </com.google.android.material.textfield.TextInputLayout>
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:orientation="vertical">
 
-    <Button
-        android:id="@+id/sign_in"
-        android:background="#F0AF4D"
-        android:text="Sign In"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/login_tag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="300px"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="30dp"
+                    android:paddingLeft="20px"
+                    android:text="Login"
+                    android:textColor="#FFFFFF"
+                    android:textSize="42sp" />
 
-    <Button
-        android:id="@+id/register"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#F0AF4D"
-        android:onClick="registerNewUser"
-        android:text="Register" />
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/login_emailinput"
+                    android:layout_width="313dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12sp"
+                    android:layout_marginBottom="16sp"
+                    android:background="@drawable/textinputstyle"
+                    android:textColorHint="#FFFFFF"
+                    app:boxStrokeColor="#FFFFFF"
+                    app:endIconTint="#FFFFFF"
+                    app:passwordToggleTint="#FFFFFF"
+                    app:startIconTint="#FFFFFF"
+                    tools:layout_editor_absoluteX="16dp"
+                    tools:layout_editor_absoluteY="194dp">
 
+                    <AutoCompleteTextView
+                        android:id="@+id/login_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#00FFFFFF"
+                        android:paddingLeft="20px"
+                        android:text="email"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF"
+                        android:textColorLink="#FFFFFF"
+                        tools:layout_editor_absoluteX="-4dp"
+                        tools:layout_editor_absoluteY="126dp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/login_password"
+                    android:layout_width="313dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12sp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/textinputstyle"
+                    android:textColorHint="#FFFFFF"
+                    app:boxStrokeColor="#FFFFFF"
+                    app:endIconTint="#FFFFFF"
+                    app:passwordToggleTint="#FFFFFF"
+                    app:startIconTint="#FFFFFF"
+                    tools:layout_editor_absoluteX="16dp"
+                    tools:layout_editor_absoluteY="194dp">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/login_passinput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#00FFFFFF"
+                        android:paddingLeft="20px"
+                        android:text="password"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF"
+                        android:textColorLink="#FFFFFF"
+                        tools:layout_editor_absoluteX="-4dp"
+                        tools:layout_editor_absoluteY="126dp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Button
+                    android:id="@+id/login_sign_in"
+                    android:layout_width="203dp"
+                    android:layout_height="34dp"
+                    android:layout_marginLeft="70dp"
+                    android:background="@drawable/orangebutton"
+
+                    android:elevation="10dp"
+                    android:foregroundGravity="center"
+
+                    android:text="Sign In"
+                    android:onClick="signInExistingUser"
+                    android:textColor="#ffffff" />
+
+                <TextView
+                    android:id="@+id/forgotpassword_tag"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="14dp"
+                    android:foregroundGravity="center"
+                    android:gravity="center"
+                    android:text="Forgot Password?"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/login_or"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center"
+                    android:text="Or"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp" />
+
+                <Button
+                    android:id="@+id/login_facebook"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+
+                    android:layout_marginLeft="12sp"
+                    android:layout_marginBottom="9dp"
+                    android:background="@drawable/facebook_button"
+                    android:elevation="9dp"
+                    android:ellipsize="marquee"
+                    android:onClick="registerNewUser"
+                    android:text="Continue with Facebook"
+                    android:textColor="#2691D8" />
+
+                <Button
+                    android:id="@+id/login_google"
+                    android:layout_width="313dp"
+                    android:layout_height="36dp"
+
+                    android:layout_marginLeft="12sp"
+                    android:layout_marginBottom="17dp"
+                    android:background="@drawable/google_button"
+                    android:elevation="9dp"
+                    android:ellipsize="marquee"
+                    android:onClick="registerNewUser"
+                    android:shadowColor="#535353"
+                    android:shadowDx="2"
+                    android:shadowDy="2"
+                    android:text="Continue with Google"
+                    android:textColor="#757676" />
+
+                <TextView
+                    android:id="@+id/notwithus_tag"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center"
+                    android:text="Not with us yet?"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp" />
+
+                <Button
+                    android:id="@+id/login_register"
+                    android:layout_width="203dp"
+                    android:layout_height="34dp"
+
+                    android:layout_marginLeft="70dp"
+                    android:background="@drawable/orangebutton"
+                    android:elevation="9dp"
+                    android:ellipsize="marquee"
+                    android:onClick="registerNewUser"
+
+                    android:text="Register"
+                    android:textColor="#ffffff" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/login_caloriemoderator_tag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp"
+            android:gravity="center_horizontal"
+            android:text="Calorie Moderator"
+            android:textColor="#FFFFFF"
+            android:textSize="40sp" />
+
+    </RelativeLayout>
 
 </LinearLayout>
+

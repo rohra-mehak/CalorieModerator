@@ -23,8 +23,8 @@
 
         <RelativeLayout
             android:id="@+id/register_center_ayout"
-            android:layout_width="346dp"
-            android:layout_height="517dp"
+            android:layout_width="351dp"
+            android:layout_height="547dp"
             android:layout_centerInParent="true"
             android:layout_marginLeft="36dp"
             android:background="@drawable/gradient_white">
@@ -33,187 +33,131 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
-                <TextView
-                    android:id="@+id/reg_tag"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="239px"
-                    android:layout_marginTop="30dp"
-                    android:layout_marginBottom="30dp"
-                    android:paddingLeft="20px"
-                    android:text="Register"
-                    android:textColor="#FFFFFF"
-                    android:textSize="42sp" />
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="313dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="12sp"
-                    android:layout_marginBottom="16sp"
-                    android:background="@drawable/textinputstyle"
-                    android:textColorHint="#FFFFFF"
-                    app:boxStrokeColor="#FFFFFF"
-                    app:endIconTint="#FFFFFF"
-                    app:passwordToggleTint="#FFFFFF"
-                    app:startIconTint="#FFFFFF"
-                    tools:layout_editor_absoluteX="16dp"
-                    tools:layout_editor_absoluteY="194dp">
-                    <AutoCompleteTextView
-                        android:id="@+id/register_email"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="#00FFFFFF"
-                        android:paddingLeft="20px"
-                        android:text="email"
-                        android:textColor="#FFFFFF"
-                        android:textColorHighlight="#FFFFFF"
-                        android:textColorHint="#FFFFFF"
-                        android:textColorLink="#FFFFFF"
-                        tools:layout_editor_absoluteX="-4dp"
-                        tools:layout_editor_absoluteY="126dp" />
-                </com.google.android.material.textfield.TextInputLayout>
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="313dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="12sp"
-                    android:layout_marginBottom="16sp"
-                    android:background="@drawable/textinputstyle"
-                    android:textColorHint="#FFFFFF"
-                    app:boxStrokeColor="#FFFFFF"
-                    app:endIconTint="#FFFFFF"
-                    app:passwordToggleTint="#FFFFFF"
-                    app:startIconTint="#FFFFFF"
-                    tools:layout_editor_absoluteX="16dp"
-                    tools:layout_editor_absoluteY="194dp">
-
-                    <AutoCompleteTextView
-                        android:id="@+id/register_username"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="#00FFFFFF"
-                        android:paddingLeft="20px"
-                        android:text="username"
-                        android:textColor="#FFFFFF"
-                        android:textColorHighlight="#FFFFFF"
-                        android:textColorHint="#FFFFFF"
-                        android:textColorLink="#FFFFFF"
-                        tools:layout_editor_absoluteX="-4dp"
-                        tools:layout_editor_absoluteY="126dp" />
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="313dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="12sp"
-                    android:layout_marginBottom="16sp"
-                    android:background="@drawable/textinputstyle"
-                    android:textColorHint="#FFFFFF"
-                    app:boxStrokeColor="#FFFFFF"
-                    app:endIconTint="#FFFFFF"
-                    app:passwordToggleTint="#FFFFFF"
-                    app:startIconTint="#FFFFFF"
-                    tools:layout_editor_absoluteX="16dp"
-                    tools:layout_editor_absoluteY="194dp">
-
-                    <EditText
-                        android:id="@+id/register_password"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="#00FFFFFF"
-                        android:paddingLeft="20px"
-                        android:text="password"
-                        android:textColor="#FFFFFF"
-                        android:textColorHighlight="#FFFFFF"
-                        android:textColorHint="#FFFFFF"
-                        android:textColorLink="#FFFFFF"
-                        tools:layout_editor_absoluteX="-4dp"
-                        tools:layout_editor_absoluteY="126dp"/>
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="313dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="12sp"
-                    android:layout_marginBottom="16sp"
-                    android:background="@drawable/textinputstyle"
-                    android:textColorHint="#FFFFFF"
-                    app:boxStrokeColor="#FFFFFF"
-                    app:endIconTint="#FFFFFF"
-                    app:passwordToggleTint="#FFFFFF"
-                    app:startIconTint="#FFFFFF"
-                    tools:layout_editor_absoluteX="16dp"
-                    tools:layout_editor_absoluteY="194dp">
-
-
-                    <EditText
-                        android:id="@+id/register_confirm_password"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="#00FFFFFF"
-                        android:paddingLeft="20px"
-                        android:text="confirm password"
-                        android:textColor="#FFFFFF"
-                        android:textColorHighlight="#FFFFFF"
-                        android:textColorHint="#FFFFFF"
-                        android:textColorLink="#FFFFFF"
-                        tools:layout_editor_absoluteX="-4dp"
-                        tools:layout_editor_absoluteY="126dp"/>
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <Button
-                    android:id="@+id/sign_up"
-                    android:layout_width="203dp"
-                    android:layout_height="34dp"
-                    android:layout_marginLeft="70dp"
-                    android:background="@drawable/orangebutton"
-
-                    android:elevation="10dp"
-                    android:foregroundGravity="center"
-                    android:onClick="signUp"
-                    android:text="Sign In"
-                    android:textColor="#ffffff" />
                 <TextView
                     android:id="@+id/login_or"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="30dp"
                     android:gravity="center"
-                    android:text="Or"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:text="Tell us a bit more about yourself"
                     android:textColor="#FFFFFF"
                     android:textSize="24sp" />
-                <Button
-                    android:id="@+id/register_facebook"
-                    android:layout_width="wrap_content"
-                    android:layout_height="36dp"
 
-                    android:layout_marginLeft="12sp"
-                    android:layout_marginBottom="9dp"
-                    android:background="@drawable/facebook_button"
-                    android:elevation="9dp"
-                    android:ellipsize="marquee"
-
-                    android:text="Continue with Facebook"
-                    android:textColor="#2691D8"  />
-
-                <Button
-                    android:id="@+id/google_button"
+                <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="313dp"
-                    android:layout_height="36dp"
-
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="12sp"
-                    android:layout_marginBottom="17dp"
-                    android:background="@drawable/google_button"
-                    android:elevation="9dp"
-                    android:ellipsize="marquee"
+                    android:layout_marginBottom="16sp"
+                    android:background="@drawable/textinputstyle"
+                    android:textColorHint="#FFFFFF"
+                    app:boxStrokeColor="#FFFFFF"
+                    app:endIconTint="#FFFFFF"
+                    app:passwordToggleTint="#FFFFFF"
+                    app:startIconTint="#FFFFFF"
+                    tools:layout_editor_absoluteX="16dp"
+                    tools:layout_editor_absoluteY="194dp">
 
-                    android:shadowColor="#535353"
-                    android:shadowDx="2"
-                    android:shadowDy="2"
-                    android:text="Continue with Google"
-                    android:textColor="#757676" />
+                    <AutoCompleteTextView
+                        android:id="@+id/input_height"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#00FFFFFF"
+                        android:paddingLeft="20px"
+                        android:text="your height (cm)"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF"
+                        android:textColorLink="#FFFFFF"
+                        tools:layout_editor_absoluteX="-4dp"
+                        tools:layout_editor_absoluteY="126dp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="313dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12sp"
+                    android:layout_marginBottom="16sp"
+                    android:background="@drawable/textinputstyle"
+                    android:textColorHint="#FFFFFF"
+                    app:boxStrokeColor="#FFFFFF"
+                    app:endIconTint="#FFFFFF"
+                    app:passwordToggleTint="#FFFFFF"
+                    app:startIconTint="#FFFFFF"
+                    tools:layout_editor_absoluteX="16dp"
+                    tools:layout_editor_absoluteY="194dp">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/input_weight"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#00FFFFFF"
+                        android:paddingLeft="20px"
+                        android:text="weight (kg)"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF"
+                        android:textColorLink="#FFFFFF"
+                        tools:layout_editor_absoluteX="-4dp"
+                        tools:layout_editor_absoluteY="126dp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/ques_gender"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:text="Gender"
+                    android:textAllCaps="true"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp" />
+
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RadioButton
+                        android:id="@+id/radio_female"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="24sp"
+                        android:text="Female"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF"
+                        android:textColorLink="#FFFFFF" />
+
+                    <RadioButton
+                        android:id="@+id/radio_male"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="24sp"
+                        android:text="Male"
+                        android:textColor="#FFFFFF"
+                        android:textColorHighlight="#FFFFFF"
+                        android:textColorHint="#FFFFFF"
+                        android:textColorLink="#FFFFFF" />
+
+                </RadioGroup>
+
+                <Button
+                    android:id="@+id/next_button"
+                    android:layout_width="203dp"
+                    android:layout_height="34dp"
+                    android:layout_marginLeft="70dp"
+                    android:layout_marginTop="30dp"
+
+                    android:background="@drawable/orangebutton"
+                    android:elevation="10dp"
+
+                    android:foregroundGravity="center"
+                    android:text="Next"
+                    android:textColor="#ffffff" />
 
             </LinearLayout>
         </RelativeLayout>
