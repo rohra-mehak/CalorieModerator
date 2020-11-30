@@ -42,8 +42,12 @@ class loginActivty: AppCompatActivity() {
     }
     // Executed when Sign in button pressed
     fun signInExistingUser(v: View) {
-        attemptLogin()
 
+        val intent = Intent(this, com.e.myapplication.FooddiaryActivity::class.java)
+        finish()
+        startActivity(intent)
+        // TODO uncomment
+        // attemptLogin()
     }
     // Executed when Register button pressed
     fun registerNewUser(v:View) {

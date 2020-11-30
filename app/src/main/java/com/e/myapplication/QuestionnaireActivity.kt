@@ -35,6 +35,7 @@ class QuestionnaireActivity : AppCompatActivity() {
     }
 
     fun onNextButtonClicked(view: View){
+        /*
         val userYear = intent.getIntExtra(USER_YEAR, 0)
         val userMonth = intent.getIntExtra(USER_MONTH, 0)
         val userDay = intent.getIntExtra(USER_DAY, 0)
@@ -49,6 +50,12 @@ class QuestionnaireActivity : AppCompatActivity() {
 
         handleBmi(view, userHeight.toInt(), userWeight.toInt())
         // TODO save to db??
+
+
+         */
+        // TODO remove it, im just testing repositories
+        val intent = Intent(this, TestActivity::class.java)
+        startActivity(intent)
     }
 
     fun handleBmi(view: View, height: Int, weight: Int){

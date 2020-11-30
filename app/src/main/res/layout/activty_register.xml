@@ -33,6 +33,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
+
                 <TextView
                     android:id="@+id/reg_tag"
                     android:layout_width="wrap_content"
@@ -44,8 +45,9 @@
                     android:text="Register"
                     android:textColor="#FFFFFF"
                     android:textSize="42sp" />
+
                 <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="313dp"
+                    android:layout_width="301dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="12sp"
                     android:layout_marginBottom="16sp"
@@ -75,7 +77,7 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="313dp"
+                    android:layout_width="301dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="12sp"
                     android:layout_marginBottom="16sp"
@@ -104,7 +106,7 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="313dp"
+                    android:layout_width="301dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="12sp"
                     android:layout_marginBottom="16sp"
@@ -135,7 +137,7 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="313dp"
+                    android:layout_width="301dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="12sp"
                     android:layout_marginBottom="16sp"
@@ -178,16 +180,18 @@
                     android:onClick="signUp"
                     android:text="Sign In"
                     android:textColor="#ffffff" />
+
                 <TextView
                     android:id="@+id/login_or"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
                     android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
                     android:gravity="center"
                     android:text="Or"
                     android:textColor="#FFFFFF"
                     android:textSize="24sp" />
+
                 <Button
                     android:id="@+id/register_facebook"
                     android:layout_width="wrap_content"
@@ -200,7 +204,7 @@
                     android:ellipsize="marquee"
 
                     android:text="Continue with Facebook"
-                    android:textColor="#2691D8"  />
+                    android:textColor="#2691D8" />
 
                 <Button
                     android:id="@+id/google_button"
@@ -221,15 +225,17 @@
 
             </LinearLayout>
         </RelativeLayout>
+
         <TextView
             android:id="@+id/login_caloriemoderator_tag"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="20dp"
             android:gravity="center_horizontal"
+            android:paddingTop="20dp"
             android:text="Calorie Moderator"
             android:textColor="#FFFFFF"
-            android:textSize="40sp" />
+            android:textSize="40sp"
+            android:visibility="invisible" />
     </RelativeLayout>
 
 </LinearLayout>

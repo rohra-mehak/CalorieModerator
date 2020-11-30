@@ -51,7 +51,7 @@
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/login_emailinput"
-                    android:layout_width="313dp"
+                    android:layout_width="301dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="12sp"
                     android:layout_marginBottom="16sp"
@@ -83,7 +83,7 @@
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/login_password"
-                    android:layout_width="313dp"
+                    android:layout_width="301dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="12sp"
                     android:layout_marginBottom="16dp"
@@ -123,8 +123,8 @@
                     android:elevation="10dp"
                     android:foregroundGravity="center"
 
-                    android:text="Sign In"
                     android:onClick="signInExistingUser"
+                    android:text="Sign In"
                     android:textColor="#ffffff" />
 
                 <TextView
@@ -211,11 +211,12 @@
             android:id="@+id/login_caloriemoderator_tag"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="20dp"
             android:gravity="center_horizontal"
+            android:paddingTop="20dp"
             android:text="Calorie Moderator"
             android:textColor="#FFFFFF"
-            android:textSize="40sp" />
+            android:textSize="40sp"
+            android:visibility="invisible" />
 
     </RelativeLayout>
 
