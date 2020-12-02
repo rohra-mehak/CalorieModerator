@@ -10,6 +10,8 @@ import androidx.appcompat.app.AppCompatActivity
 import com.e.myapplication.Constants.Companion.USER_DAY
 import com.e.myapplication.Constants.Companion.USER_MONTH
 import com.e.myapplication.Constants.Companion.USER_YEAR
+import com.e.myapplication.repository.TestRepository
+import com.google.firebase.auth.FirebaseAuth
 import kotlin.math.roundToLong
 
 class QuestionnaireActivity : AppCompatActivity() {
@@ -18,10 +20,13 @@ class QuestionnaireActivity : AppCompatActivity() {
     lateinit var weightInput: AutoCompleteTextView
     lateinit var heightInput: AutoCompleteTextView
     lateinit var genderRadio: RadioGroup
+    lateinit var testEntityRepository: TestRepository
 
     protected  override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.questionnaire)
+
+        testEntityRepository = TestRepository()
 
         nextButton = findViewById<Button>(R.id.next_questionaire_button)
         weightInput = findViewById<AutoCompleteTextView>(R.id.input_weight)
@@ -35,27 +40,34 @@ class QuestionnaireActivity : AppCompatActivity() {
     }
 
     fun onNextButtonClicked(view: View){
-        /*
+
         val userYear = intent.getIntExtra(USER_YEAR, 0)
         val userMonth = intent.getIntExtra(USER_MONTH, 0)
         val userDay = intent.getIntExtra(USER_DAY, 0)
+        val dob = userYear.toString()+"-"+userMonth.toString()+"-"+userDay.toString()
+
+        val userId = intent.getStringExtra("USER_ID")
         val userWeight : String = weightInput.text.toString()
         val userHeight : String = heightInput.text.toString()
 
-
-        println(resources.getResourceEntryName(genderRadio.checkedRadioButtonId))
-        println(userYear)
-        println(userMonth)
-        println(userDay)
+        val genderRadio = resources.getResourceEntryName(genderRadio.checkedRadioButtonId)
+        var gender = ""
+        if(genderRadio == "radio_male")
+            gender = "Male"
+        else
+            gender = "Female"
 
         handleBmi(view, userHeight.toInt(), userWeight.toInt())
-        // TODO save to db??
 
+        // TODO pass username from previous activities + handle gender radio button
+        testEntityRepository.writeInfoToUser(userId, "TODO", dob, gender, userHeight.toInt())
 
-         */
-        // TODO remove it, im just testing repositories
-        val intent = Intent(this, TestActivity::class.java)
+        val intent = Intent(this, FooddiaryActivity::class.java)
         startActivity(intent)
+
+        // TODO remove it, im just testing repositories
+        //val intent = Intent(this, TestActivity::class.java)
+        //startActivity(intent)
     }
 
     fun handleBmi(view: View, height: Int, weight: Int){

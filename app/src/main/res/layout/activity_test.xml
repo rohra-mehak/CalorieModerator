@@ -6,37 +6,60 @@
     android:layout_height="match_parent"
     tools:context=".TestActivity">
 
-    <EditText
-        android:id="@+id/test_name"
+    <Button
+        android:id="@+id/test_save"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="name"
-        android:inputType="textPersonName"
+        android:text="Save test user"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/test_age"
+        android:id="@+id/input_test_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="age"
-        android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/test_save"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/test_name" />
+        android:hint="date"
+        android:inputType="datetime"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/test_save"
+    <EditText
+        android:id="@+id/input_test_weight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:ems="10"
+        android:hint="weight"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_save_test_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Weight by date"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_test_date" />
+
+    <Button
+        android:id="@+id/button_test_get_weight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Get weight list"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button_save_test_date"
+        app:layout_constraintTop_toBottomOf="@+id/input_test_weight" />
+
+    <Button
+        android:id="@+id/button_test_fillfood"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fill db with food"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/test_name" />
+        app:layout_constraintTop_toBottomOf="@+id/test_save" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

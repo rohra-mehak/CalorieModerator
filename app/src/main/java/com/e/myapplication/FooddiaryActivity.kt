@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.e.myapplication.Constants.Companion.USER_DAY
 import com.e.myapplication.Constants.Companion.USER_MONTH
 import com.e.myapplication.Constants.Companion.USER_YEAR
+import com.google.firebase.auth.FirebaseAuth
 
 class FooddiaryActivity : AppCompatActivity() {
     lateinit var nextButton: Button
@@ -20,6 +21,10 @@ class FooddiaryActivity : AppCompatActivity() {
 
         nextButton.setOnClickListener{
 
+            val user = FirebaseAuth.getInstance().currentUser
+            if (user != null) {
+                println(user.uid)
+            }
             val intent = Intent(this, AddfoodActivity::class.java)
             finish()
             startActivity(intent)

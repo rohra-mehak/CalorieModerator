@@ -69,17 +69,18 @@ class registerActivity: AppCompatActivity() {
     }
 
     // Executed when Sign Up button is pressed.
-    fun signUp(v: View) { // TODO uncomment IF: I had to comment it out becauyse my device doesnt want to crate user xD
-    //    if(attemptRegistration()){
-            val intent = Intent(this, com.e.myapplication.DobActivity::class.java)
-            finish()
-            startActivity(intent)
-  //      } else {
-            // TODO
-   //     }
+    fun signUp(v: View) {
+
+        // Uncomment for test menu
+        /*
+        val intent = Intent(this, com.e.myapplication.TestActivity::class.java)
+        finish()
+        startActivity(intent)
+        */
+        attemptRegistration()
     }
 
-    private fun attemptRegistration(): Boolean {
+    private fun attemptRegistration() {
         // Reset errors displayed in the form.
         mEmailView?.setError(null)
         mPasswordView?.setError(null)
@@ -110,9 +111,8 @@ class registerActivity: AppCompatActivity() {
             if (focusView != null) {
                 focusView.requestFocus()
             }
-            return false
         } else {
-            return CreateFirebaseUser()
+            CreateFirebaseUser()
             // TODO: Call create FirebaseUser() here
         }
     }
@@ -133,19 +133,24 @@ class registerActivity: AppCompatActivity() {
         val DISPLAY_NAME_KEY = "username"
     }
 
-    private fun CreateFirebaseUser(): Boolean {
+    private fun CreateFirebaseUser(){
         val email = mEmailView?.getText().toString()
         // val email1 = mEmailView?.text.toString()
         val password = mPasswordView?.getText().toString()
-        var isSuccess = false
         mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this) { task ->
             Log.d("sucesss", "on complete" + task.isSuccessful)
+            val user = FirebaseAuth.getInstance().currentUser
+            if (user != null) {
+                val intent = Intent(this, com.e.myapplication.DobActivity::class.java)
+                intent.putExtra("USER_ID", user.uid)
+                finish()
+                startActivity(intent)
+            }
+
             if (!task.isSuccessful) {
                 Log.d("fail", "user creation failed" + task.isSuccessful)
             }
-            isSuccess = task.isSuccessful
         }
-        return isSuccess
     }
 
     //start google sigh in  if button pressed
