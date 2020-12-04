@@ -25,7 +25,7 @@ class loginActivty: AppCompatActivity() {
     protected  override fun onCreate(savedInstanceState:Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-        mEmailView = findViewById(R.id.login_email) as AutoCompleteTextView
+        mEmailView = findViewById(R.id.input_weight_for_day) as AutoCompleteTextView
         mPasswordView = findViewById(R.id.login_passinput) as AutoCompleteTextView
         mPasswordView!!.setOnEditorActionListener(object: TextView.OnEditorActionListener {
             override fun onEditorAction(textView:TextView, id:Int, keyEvent: KeyEvent):Boolean {

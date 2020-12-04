@@ -3,21 +3,26 @@ package com.e.myapplication
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
-import android.widget.DatePicker
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
-import com.e.myapplication.Constants.Companion.USER_DAY
-import com.e.myapplication.Constants.Companion.USER_MONTH
-import com.e.myapplication.Constants.Companion.USER_YEAR
 import com.google.firebase.auth.FirebaseAuth
 
 class FooddiaryActivity : AppCompatActivity() {
     lateinit var nextButton: Button
+    lateinit var bottomProfile: ImageView
 
     protected  override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.fooddiary_layout)
 
-        nextButton = findViewById<Button>(R.id.addfood_button)
+        nextButton = findViewById<Button>(R.id.button_enterweight)
+        bottomProfile = findViewById<ImageView>(R.id.bottom_profile)
+
+        bottomProfile.setOnClickListener {
+            val intent = Intent(this, EnterweightActivity::class.java)
+            finish()
+            startActivity(intent)
+        }
 
         nextButton.setOnClickListener{
 

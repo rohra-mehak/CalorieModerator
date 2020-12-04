@@ -66,8 +66,8 @@ class QuestionnaireActivity : AppCompatActivity() {
         startActivity(intent)
 
         // TODO remove it, im just testing repositories
-        //val intent = Intent(this, TestActivity::class.java)
-        //startActivity(intent)
+      //  val intent = Intent(this, TestActivity::class.java)
+      //  startActivity(intent)
     }
 
     fun handleBmi(view: View, height: Int, weight: Int){

@@ -1,13 +1,7 @@
 package com.e.myapplication.repository
 
-import android.provider.ContactsContract
-import android.widget.Toast
-import com.e.myapplication.entity.FoodEntity
-import com.e.myapplication.entity.TestEntity
-import com.e.myapplication.entity.UserEntity
-import com.e.myapplication.entity.WeightByDateEntity
+import com.e.myapplication.entity.*
 import com.google.firebase.database.*
-import com.google.firebase.ktx.Firebase
 
 
 class TestRepository {
@@ -16,6 +10,8 @@ class TestRepository {
     constructor(){
 
     }
+
+    @Deprecated("This method was only meant for testing - do not use")
     fun writeTest(name: String, age: Int){
         println("starting write test")
         // Database reference pointing to root of database
@@ -46,6 +42,64 @@ class TestRepository {
         weightListRef.child(entityId!!).setValue(toStore)
     }
 
+    fun getWeightListForUser(userId: String?): ArrayList<Map<String, Any>>{
+        database = FirebaseDatabase.getInstance().reference
+        val weightListRef: DatabaseReference = database.child("user_info").child(userId!!).child("weightByDate")
+        var resultList = arrayListOf<Map<String, Any>>()
+        println("Startin fetching")
+        weightListRef.addValueEventListener(object : ValueEventListener {
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                var resultList = arrayListOf<Map<String, Any>>()
+                for (postSnapshot in dataSnapshot.children) {
+                    resultList.add(postSnapshot.value as Map<String, Any>)
+                }
+                print(resultList)
+            }
+
+        })
+        return resultList
+    }
+
+    fun writeFoodToUserByDay(userId: String?, date: String?, foodId: String?, foodQuantity: Int){
+        database = FirebaseDatabase.getInstance().reference
+        val foodListRef: DatabaseReference = database.child("user_info").child(userId!!).child("listOfFoodByDay").child(date!!)
+        val entityId = database.push().key
+        val toStore = ConsumedFoodEntity(foodId, foodQuantity)
+
+        foodListRef.child(entityId!!).setValue(toStore)
+    }
+
+    /*
+    * Returns list of maps like that:
+    * [
+    *   "date1": [{food, quantiy}, {food2, quantity2}],
+    *   "date2": [{food3, quantiy}, {food4, quantity2}],
+    * ]
+     */
+    fun getFoodListByDateForUser(userId: String?): ArrayList<Map<String, Any>>{
+        database = FirebaseDatabase.getInstance().reference
+        val foodListRef: DatabaseReference = database.child("user_info").child(userId!!).child("listOfFoodByDay")
+        var resultList = arrayListOf<Map<String, Any>>()
+        println("Startin fetching")
+        foodListRef.addValueEventListener(object : ValueEventListener {
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                for (postSnapshot in dataSnapshot.children) {
+                    resultList.add(postSnapshot.value as Map<String, Any>)
+                }
+            }
+        })
+        return resultList
+    }
+
+
     fun writeFood(name: String?, uom: String?, kcal: Int, fat: Int, carb: Int, protein: Int){
         database = FirebaseDatabase.getInstance().reference
         val weightListRef: DatabaseReference = database.child("food")
@@ -53,7 +107,7 @@ class TestRepository {
         val toStore = FoodEntity(name, kcal, carb, protein, fat, uom!!)
         weightListRef.child(entityId!!).setValue(toStore)
     }
-    fun getFoorList(): ArrayList<Map<String, Any>> {
+    fun getFoodList(): ArrayList<Map<String, Any>> {
         database = FirebaseDatabase.getInstance().reference
         val foodListRef: DatabaseReference = database.child("food")
         var resultList = arrayListOf<Map<String, Any>>()
@@ -73,28 +127,6 @@ class TestRepository {
 
         })
         return resultList
-
-    }
-    fun getWeightListForUser(userId: String?){
-        // TODO return, now it just prints
-        database = FirebaseDatabase.getInstance().reference
-        val weightListRef: DatabaseReference = database.child("user_info").child(userId!!).child("weightByDate")
-
-        println("Startin fetching")
-        weightListRef.addValueEventListener(object : ValueEventListener {
-            override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
-            }
-
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-                var resultList = arrayListOf<Map<String, Any>>()
-                for (postSnapshot in dataSnapshot.children) {
-                    resultList.add(postSnapshot.value as Map<String, Any>)
-                }
-                print(resultList)
-            }
-
-        })
 
     }
 

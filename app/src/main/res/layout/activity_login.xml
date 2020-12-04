@@ -65,7 +65,7 @@
                     tools:layout_editor_absoluteY="194dp">
 
                     <AutoCompleteTextView
-                        android:id="@+id/login_email"
+                        android:id="@+id/input_weight_for_day"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="#00FFFFFF"

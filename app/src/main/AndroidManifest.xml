@@ -48,6 +48,9 @@
             android:name=".AddfoodActivity"
             android:screenOrientation="portrait"></activity>
         <activity
+            android:name=".EnterweightActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
             android:name=".FooddiaryActivity"
             android:screenOrientation="portrait"></activity>
     </application>

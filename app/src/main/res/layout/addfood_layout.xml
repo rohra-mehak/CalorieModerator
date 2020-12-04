@@ -23,6 +23,7 @@
 
 
             <ImageView
+                android:id="@+id/bottom_profile"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_centerHorizontal="true"
@@ -31,6 +32,7 @@
                 android:src="@drawable/profile_icon" />
 
             <ImageView
+                android:id="@+id/bottom_food"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_centerHorizontal="true"
@@ -229,7 +231,7 @@
                     app:startIconTint="#FFFFFF">
 
                     <AutoCompleteTextView
-                        android:id="@+id/login_email"
+                        android:id="@+id/input_weight_for_day"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="#00FFFFFF"
@@ -246,7 +248,7 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <Button
-                    android:id="@+id/addfood_button"
+                    android:id="@+id/button_enterweight"
                     android:layout_width="49dp"
                     android:layout_height="49dp"
                     android:layout_marginTop="16dp"
