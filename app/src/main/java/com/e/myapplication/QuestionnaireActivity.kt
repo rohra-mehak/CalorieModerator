@@ -47,6 +47,7 @@ class QuestionnaireActivity : AppCompatActivity() {
         val dob = userYear.toString()+"-"+userMonth.toString()+"-"+userDay.toString()
 
         val userId = intent.getStringExtra("USER_ID")
+        val userUsername = intent.getStringExtra("USER_USERNAME")
         val userWeight : String = weightInput.text.toString()
         val userHeight : String = heightInput.text.toString()
 
@@ -57,15 +58,16 @@ class QuestionnaireActivity : AppCompatActivity() {
         else
             gender = "Female"
 
-        handleBmi(view, userHeight.toInt(), userWeight.toInt())
+        // TODO handle BMI
+      //  handleBmi(view, userHeight.toInt(), userWeight.toInt())
 
-        // TODO pass username from previous activities + handle gender radio button
-        testEntityRepository.writeInfoToUser(userId, "TODO", dob, gender, userHeight.toInt())
+
+        testEntityRepository.writeInfoToUser(userId, userUsername, dob, gender, userHeight.toInt())
 
         val intent = Intent(this, FooddiaryActivity::class.java)
         startActivity(intent)
 
-        // TODO remove it, im just testing repositories
+        // remove it, im just testing repositories
       //  val intent = Intent(this, TestActivity::class.java)
       //  startActivity(intent)
     }

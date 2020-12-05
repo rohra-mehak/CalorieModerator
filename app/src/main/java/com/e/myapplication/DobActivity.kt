@@ -28,11 +28,14 @@ class DobActivity : AppCompatActivity() {
             val month = datePicker.month
             val day = datePicker.dayOfMonth
             val userId = intent.getStringExtra("USER_ID")
+            val userUsername = intent.getStringExtra("USER_USERNAME")
             val intent = Intent(this, QuestionnaireActivity::class.java).apply {
                 putExtra(USER_YEAR, year)
                 putExtra(USER_MONTH, month)
                 putExtra(USER_DAY, day)
                 putExtra("USER_ID", userId)
+                println(userUsername)
+                putExtra("USER_USERNAME", userUsername)
             }
             finish()
             startActivity(intent)

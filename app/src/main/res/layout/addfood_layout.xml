@@ -275,6 +275,7 @@
             android:text=" Food Diary"
             android:textColor="#7E7E7E"
             android:textSize="50sp"
+            android:visibility="gone"
             app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

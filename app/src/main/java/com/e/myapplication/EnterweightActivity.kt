@@ -22,6 +22,8 @@ class EnterweightActivity : AppCompatActivity() {
     lateinit var inputWeight : AutoCompleteTextView
     lateinit var testEntityRepository: TestRepository
 
+    lateinit var dateToSave: String
+
     protected  override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.enterweight_layout)
@@ -51,7 +53,7 @@ class EnterweightActivity : AppCompatActivity() {
 
                 // Display Selected date in textbox
                 buttonPickDateForWeight.setText("" + dayOfMonth + " " + getMonth(monthOfYear) + ", " + year)
-
+                dateToSave = (dayOfMonth.toString() + "-" + (monthOfYear+1) + "-" + year)
             }, year, month, day)
 
             dpd.show()
@@ -82,7 +84,6 @@ class EnterweightActivity : AppCompatActivity() {
                 userId = user.uid
             }
 
-            val dateToSave = (year.toString() + "-" + month + "-" + day)
             val weightToSave = buttonShowWeight.text
 
             println(dateToSave)

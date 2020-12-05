@@ -143,6 +143,8 @@ class registerActivity: AppCompatActivity() {
             if (user != null) {
                 val intent = Intent(this, com.e.myapplication.DobActivity::class.java)
                 intent.putExtra("USER_ID", user.uid)
+                intent.putExtra("USER_USERNAME", mUsernameView?.text.toString())
+                println(mUsernameView?.text.toString())
                 finish()
                 startActivity(intent)
             }

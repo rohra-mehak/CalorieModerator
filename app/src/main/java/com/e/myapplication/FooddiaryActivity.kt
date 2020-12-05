@@ -10,6 +10,7 @@ import com.google.firebase.auth.FirebaseAuth
 class FooddiaryActivity : AppCompatActivity() {
     lateinit var nextButton: Button
     lateinit var bottomProfile: ImageView
+    lateinit var testMenu: ImageView
 
     protected  override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,6 +18,7 @@ class FooddiaryActivity : AppCompatActivity() {
 
         nextButton = findViewById<Button>(R.id.button_enterweight)
         bottomProfile = findViewById<ImageView>(R.id.bottom_profile)
+        testMenu = findViewById<ImageView>(R.id.bottom_test)
 
         bottomProfile.setOnClickListener {
             val intent = Intent(this, EnterweightActivity::class.java)
@@ -24,6 +26,11 @@ class FooddiaryActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        testMenu.setOnClickListener {
+            val intent = Intent(this, TestActivity::class.java)
+            finish()
+            startActivity(intent)
+        }
         nextButton.setOnClickListener{
 
             val user = FirebaseAuth.getInstance().currentUser

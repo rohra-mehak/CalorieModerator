@@ -7,10 +7,11 @@
     tools:context=".TestActivity">
 
     <Button
-        android:id="@+id/test_save"
+        android:id="@+id/button_go_back"
+        style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Save test user"
+        android:text="Go back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,6 +24,7 @@
         android:ems="10"
         android:hint="date"
         android:inputType="datetime"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
@@ -60,7 +62,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/test_save" />
+        app:layout_constraintTop_toBottomOf="@+id/button_go_back" />
 
     <Button
         android:id="@+id/button_test_add_food_to_date"
@@ -78,6 +80,16 @@
         android:hint="date for consumed food"
         android:inputType="date"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/input_test_food_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="food name"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/input_test_date_food"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -64,13 +64,12 @@ class TestRepository {
         return resultList
     }
 
-    fun writeFoodToUserByDay(userId: String?, date: String?, foodId: String?, foodQuantity: Int){
+    fun writeFoodToUserByDay(userId: String?, date: String?, food: Map<String, Any>){
         database = FirebaseDatabase.getInstance().reference
         val foodListRef: DatabaseReference = database.child("user_info").child(userId!!).child("listOfFoodByDay").child(date!!)
         val entityId = database.push().key
-        val toStore = ConsumedFoodEntity(foodId, foodQuantity)
 
-        foodListRef.child(entityId!!).setValue(toStore)
+        foodListRef.child(entityId!!).setValue(food)
     }
 
     /*
@@ -121,13 +120,11 @@ class TestRepository {
                 for (postSnapshot in dataSnapshot.children) {
                     resultList.add(postSnapshot.value as Map<String, Any>)
                 }
-                print(resultList)
-
             }
 
         })
+        println("!!!" + resultList)
         return resultList
-
     }
 
 }
