@@ -169,7 +169,7 @@
                         android:layout_height="37dp"
                         android:layout_marginTop="16dp"
                         android:layout_marginBottom="14dp"
-                        android:text="Reccomended"
+                        android:text="All food in DB"
                         android:textColor="#545555"
                         android:textSize="30sp"
                         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"

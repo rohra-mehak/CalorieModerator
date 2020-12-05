@@ -62,7 +62,7 @@ class TestActivity : AppCompatActivity() {
         }
 
 
-        // PASTE IT FOR FOOD LIST UPDATES
+        // THIS CODE IS RESPONSIBLE FOR RETRIEVING LISTS OF FOOD FOR GIVEN USER AND OF ALL FOOD AVAILABLE
         val userId = FirebaseAuth.getInstance().currentUser?.uid
         var database: DatabaseReference
         database = FirebaseDatabase.getInstance().reference
@@ -83,13 +83,13 @@ class TestActivity : AppCompatActivity() {
 
 
         val foodListUserRef: DatabaseReference = database.child("user_info").child(userId!!).child("listOfFoodByDay")
-        resultMapForUser = mutableMapOf()
         foodListUserRef.addValueEventListener(object : ValueEventListener {
             override fun onCancelled(error: DatabaseError) {
                 TODO("Not yet implemented")
             }
 
             override fun onDataChange(dataSnapshot: DataSnapshot) {
+                resultMapForUser = mutableMapOf()
                 for (postSnapshot in dataSnapshot.children) {
                     println("KEY: " + postSnapshot.key)
                     var arrayForGivenDate = resultMapForUser[postSnapshot.key]
@@ -139,7 +139,6 @@ class TestActivity : AppCompatActivity() {
         testEntityRepository.writeFood("Cheeseburger", "piece", 123, 18, 173, 11)
         testEntityRepository.writeFood("Spaghetti", "piece", 432, 14, 133, 17)
         testEntityRepository.writeFood("Tikka masala", "piece",  760, 111, 163, 13)
-
 
     }
 }
