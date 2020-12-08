@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/google_sign_in"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="@drawable/bc"
+    android:gravity="top"
+    android:orientation="vertical"
+    tools:context="com.e.myapplication.registerActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/gradient">
+        <ImageView
+            android:id="@+id/background_runner"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.3"
+            app:srcCompat="@drawable/runner" />
+
+        <RelativeLayout
+            android:id="@+id/register_center_layout"
+            android:layout_width="351dp"
+            android:layout_height="547dp"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="36dp"
+            android:background="@drawable/gradient_white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/dob_tag_quest"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="30dp"
+                    android:gravity="left"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:text="Just one more thing..."
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/ques_dob"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:text="Your dob"
+                    android:textAllCaps="true"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp" />
+
+                <DatePicker
+                    android:id="@+id/datePicker1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:calendarViewShown="false"
+                    android:datePickerMode="spinner" />
+
+                <Button
+                    android:id="@+id/submit_dob_button"
+                    android:layout_width="203dp"
+                    android:layout_height="34dp"
+                    android:layout_marginLeft="70dp"
+                    android:layout_marginTop="30dp"
+
+                    android:background="@drawable/orangebutton"
+                    android:elevation="10dp"
+
+                    android:foregroundGravity="center"
+                    android:text="Submit"
+                    android:textColor="#ffffff" />
+
+            </LinearLayout>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/login_caloriemoderator_tag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:paddingTop="20dp"
+            android:text="Calorie Moderator"
+            android:textColor="#FFFFFF"
+            android:textSize="40sp"
+            android:visibility="invisible" />
+    </RelativeLayout>
+
+</LinearLayout>
