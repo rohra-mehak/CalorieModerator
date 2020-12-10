@@ -161,16 +161,16 @@ class FooddiaryActivity : AppCompatActivity() {
         val  mySet  = PieDataSet(entry, "Consumption")
 
           var myData  = PieData(mySet)
-        mySet.setColors(*ColorTemplate.JOYFUL_COLORS)
 
+
+        //mySet.setColors(*ColorTemplate.JOYFUL_COLORS)
+        mySet.setColors(Color.parseColor("#03DAC5"), Color.parseColor("#03bafc"), Color.parseColor("#6200EE"));
+        myPieChart.description.text = "Consumption levels"
         myPieChart.setDrawCenterText(true);
-
-
         myPieChart.setCenterTextColor(Color.BLACK);
         myPieChart.setCenterTextSize(10f);
         myPieChart.setCenterText("kcal:"+ pieList[3].toDouble());
         myPieChart.data = myData
-
 
     }
 }

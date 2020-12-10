@@ -86,7 +86,7 @@ class AddfoodActivity : AppCompatActivity() {
              myListView.setOnItemClickListener { parent, view, position, id ->
                  // Get the selected item text from ListView
                  val selectedItem : Map<String, Any> = parent.getItemAtPosition(position) as Map<String, Any>
-                 Toast.makeText(this, "$selectedItem  Bitch", Toast.LENGTH_SHORT)
+                 Toast.makeText(this, "$selectedItem  !", Toast.LENGTH_SHORT)
                      .show()
                  //alert is called here with the item user selects to save to db
                  showAlert(selectedItem as Map<String, Any>)
@@ -101,7 +101,7 @@ class AddfoodActivity : AppCompatActivity() {
         var searchResult = searchView.text.toString()
         var quantityResult = quantityView.text.toString()
         if (searchResult.equals("") || (quantityResult.equals(""))) {
-            Toast.makeText(this, "Enter something please", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Search Cannot be blank", Toast.LENGTH_SHORT).show()
             println("return")
         }
         else {
@@ -122,7 +122,7 @@ class AddfoodActivity : AppCompatActivity() {
         var searchResult = searchView.text.toString()
         var quantityResult = quantityView.text.toString()
         if (searchResult.equals("") || (quantityResult.equals(""))) {
-            Toast.makeText(this, "Enter some shit bitch", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Search cannot be blank", Toast.LENGTH_SHORT).show()
             println("return")
         }
         else {
@@ -142,7 +142,7 @@ class AddfoodActivity : AppCompatActivity() {
      // alert for confirmation for adding food to db
     private fun showAlert( item : Map<String , Any>){
         val builder = AlertDialog.Builder(this)
-            .setTitle("would you like to add food to diary ?")
+            .setTitle("Would you like to add food to diary ?")
 
         .setPositiveButton("YES") { dialog, which ->
             val dateToFood: String = SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(Date())

@@ -7,9 +7,10 @@
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="319dp"
-        android:layout_height="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:orientation="horizontal"
+        android:layout_marginTop="30dp"
         app:layout_constraintBottom_toTopOf="@+id/scrollView3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -20,8 +21,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:foregroundGravity="center"
-            android:paddingLeft="15sp"
-            android:paddingRight="10sp"
+
             android:text="food"
             android:textColor="#FFFFFF" />
 
@@ -31,8 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:foregroundGravity="center"
-            android:paddingLeft="15sp"
-            android:paddingRight="10sp"
+
             android:text="protein"
             android:textColor="#FFFFFF" />
 
@@ -42,8 +41,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:foregroundGravity="center"
-            android:paddingLeft="15sp"
-            android:paddingRight="10sp"
+
             android:text="fat"
             android:textColor="#FFFFFF" />
 
@@ -53,8 +51,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:foregroundGravity="center"
-            android:paddingLeft="15sp"
-            android:paddingRight="10sp"
+
             android:text="carbs"
             android:textColor="#FFFFFF" />
 
@@ -64,8 +61,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:foregroundGravity="center"
-            android:paddingLeft="15sp"
-            android:paddingRight="10sp"
+
             android:text="kcal"
             android:textColor="#FFFFFF" />
     </LinearLayout>
