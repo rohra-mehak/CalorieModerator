@@ -134,15 +134,15 @@ class TestActivity : AppCompatActivity() {
         testEntityRepository.writeFoodToUserByDay(userId, dateToFood, foodToSave)
     }
     fun saveFoodToDb(){
-        testEntityRepository.writeFood("Apple pie", "100g", 100, 12, 153, 123)
-        testEntityRepository.writeFood("Apple shit", "100g", 2546, 42, 183, 113)
-        testEntityRepository.writeFood("Cheese apple", "100g", 178, 82, 113, 3)
-        testEntityRepository.writeFood("Pizzaapple", "100g", 642, 13, 133, 73)
-        testEntityRepository.writeFood("Cola apple", "100g", 2745, 62, 123, 263)
-        testEntityRepository.writeFood("BigMac apple", "100g", 632, 85, 153, 16)
-        testEntityRepository.writeFood("Cheeseburger apple ", "100g", 123, 18, 173, 11)
-        testEntityRepository.writeFood("Spaghetti apple ", "100g", 4322, 14, 1333, 17)
-        testEntityRepository.writeFood("Tikka masala apple ", "100g",  760, 111, 163, 13)
+        testEntityRepository.writeFood("name", "100g", 1, 2, 3, 4)
+//        testEntityRepository.writeFood("Apple shit", "100g", 2546, 42, 183, 113)
+//        testEntityRepository.writeFood("Cheese apple", "100g", 178, 82, 113, 3)
+//        testEntityRepository.writeFood("Pizzaapple", "100g", 642, 13, 133, 73)
+//        testEntityRepository.writeFood("Cola apple", "100g", 2745, 62, 123, 263)
+//        testEntityRepository.writeFood("BigMac apple", "100g", 632, 85, 153, 16)
+//        testEntityRepository.writeFood("Cheeseburger apple ", "100g", 123, 18, 173, 11)
+//        testEntityRepository.writeFood("Spaghetti apple ", "100g", 4322, 14, 1333, 17)
+//        testEntityRepository.writeFood("Tikka masala apple ", "100g",  760, 111, 163, 13)
 
     }
 }

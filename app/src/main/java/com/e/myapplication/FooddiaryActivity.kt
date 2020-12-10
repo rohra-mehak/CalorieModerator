@@ -105,13 +105,14 @@ class FooddiaryActivity : AppCompatActivity() {
          var newlist :  ArrayList<Any> = arrayListOf()
          if (list != null) {
              for (maps in list){
-            newlist.add(maps.values)
+            newlist.add(maps)
          }
      }
         println( "mylist: " +list)
         println(list)
 
-       val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_2,android.R.id.text1, newlist )
+      // val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_2,android.R.id.text1, newlist )
+    val adapter = AddFoodAdapter(this, newlist, this)
 
     myFoodView.adapter = adapter
         adapter?.notifyDataSetChanged()

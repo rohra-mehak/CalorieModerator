@@ -77,9 +77,10 @@ class AddfoodActivity : AppCompatActivity() {
          fetchFood?.setOnClickListener {
              Log.d("bnkbn", "button pressed")
              // creates a new list from search result everytime a search is implemented  and is fed to the adapter
-             var myList : ArrayList<Map<String ,Any>> = getAnother()
+             var myList : ArrayList<Any> = getAnother()
 
-             val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_2,android.R.id.text1, myList )
+            // val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_2,android.R.id.text1, myList )
+             val adapter = AddFoodAdapter(this, myList, this)
              myListView.setAdapter(adapter)
              adapter.notifyDataSetChanged()
              myListView.setOnItemClickListener { parent, view, position, id ->
@@ -95,8 +96,8 @@ class AddfoodActivity : AppCompatActivity() {
          }
      }
     fun getSearchResult(): ArrayList<Any> {
-            var newList: ArrayList<Any>
-            newList = arrayListOf()
+        var newList: ArrayList<Any>
+        newList = arrayListOf()
         var searchResult = searchView.text.toString()
         var quantityResult = quantityView.text.toString()
         if (searchResult.equals("") || (quantityResult.equals(""))) {
@@ -105,22 +106,19 @@ class AddfoodActivity : AppCompatActivity() {
         }
         else {
             for (myList in allFoodList) {
-                         if (myList.containsValue(searchResult)) {
-                         newList.add(myList.values)
-
-                         println(newList)
+                if (myList.containsValue(searchResult)) {
+                    newList.add(myList)
+                    println(newList)
                      }
                 }
-
-
             }
         return newList
     }
 
     // fetches a list from allFoodList that matches search searchResult
 
-    fun getAnother() : ArrayList<Map<String , Any>>{
-        var newList: ArrayList<Map<String , Any>> = arrayListOf()
+    fun getAnother() : ArrayList<Any>{
+        var newList: ArrayList<Any> = arrayListOf()
         var searchResult = searchView.text.toString()
         var quantityResult = quantityView.text.toString()
         if (searchResult.equals("") || (quantityResult.equals(""))) {
