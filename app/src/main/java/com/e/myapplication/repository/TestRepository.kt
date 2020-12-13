@@ -79,6 +79,8 @@ class TestRepository {
     *   "date2": [{food3, quantiy}, {food4, quantity2}],
     * ]
      */
+
+
     fun getFoodListByDateForUser(userId: String?): ArrayList<Map<String, Any>>{
         database = FirebaseDatabase.getInstance().reference
         val foodListRef: DatabaseReference = database.child("user_info").child(userId!!).child("listOfFoodByDay")

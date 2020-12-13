@@ -76,10 +76,13 @@ class TestActivity : AppCompatActivity() {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 for (postSnapshot in dataSnapshot.children) {
                     allFoodList.add(postSnapshot.value as Map<String, Any>)
+                    println(allFoodList)
                 }
             }
 
         })
+
+        println(allFoodList)
 
 
         val foodListUserRef: DatabaseReference = database.child("user_info").child(userId!!).child("listOfFoodByDay")
@@ -122,7 +125,8 @@ class TestActivity : AppCompatActivity() {
     }
     fun saveFoodToDate(){
         val dateToFood = dateFoodInput.text.toString()
-      //  println(allFoodList)
+        println("this is all food list:")
+      println(allFoodList)
         println(resultMapForUser)
         val userId = FirebaseAuth.getInstance().currentUser?.uid
         var foodToSave: MutableMap<String, Any> = allFoodList[Random.nextInt(0, allFoodList.size)] as MutableMap<String, Any>
@@ -130,15 +134,15 @@ class TestActivity : AppCompatActivity() {
         testEntityRepository.writeFoodToUserByDay(userId, dateToFood, foodToSave)
     }
     fun saveFoodToDb(){
-        testEntityRepository.writeFood("Apple", "piece", 100, 12, 153, 123)
-        testEntityRepository.writeFood("Milk", "piece", 256, 42, 183, 113)
-        testEntityRepository.writeFood("Cheese", "piece", 178, 82, 113, 3)
-        testEntityRepository.writeFood("Pizza", "piece", 642, 13, 133, 73)
-        testEntityRepository.writeFood("Cola", "piece", 275, 62, 123, 263)
-        testEntityRepository.writeFood("BigMac", "piece", 632, 85, 153, 16)
-        testEntityRepository.writeFood("Cheeseburger", "piece", 123, 18, 173, 11)
-        testEntityRepository.writeFood("Spaghetti", "piece", 432, 14, 133, 17)
-        testEntityRepository.writeFood("Tikka masala", "piece",  760, 111, 163, 13)
+        testEntityRepository.writeFood("name", "100g", 1, 2, 3, 4)
+//        testEntityRepository.writeFood("Apple shit", "100g", 2546, 42, 183, 113)
+//        testEntityRepository.writeFood("Cheese apple", "100g", 178, 82, 113, 3)
+//        testEntityRepository.writeFood("Pizzaapple", "100g", 642, 13, 133, 73)
+//        testEntityRepository.writeFood("Cola apple", "100g", 2745, 62, 123, 263)
+//        testEntityRepository.writeFood("BigMac apple", "100g", 632, 85, 153, 16)
+//        testEntityRepository.writeFood("Cheeseburger apple ", "100g", 123, 18, 173, 11)
+//        testEntityRepository.writeFood("Spaghetti apple ", "100g", 4322, 14, 1333, 17)
+//        testEntityRepository.writeFood("Tikka masala apple ", "100g",  760, 111, 163, 13)
 
     }
 }

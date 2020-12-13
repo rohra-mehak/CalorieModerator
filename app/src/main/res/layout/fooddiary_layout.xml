@@ -76,20 +76,6 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 tools:layout_editor_absoluteX="-56dp">
 
-                <org.eazegraph.lib.charts.PieChart
-                    android:id="@+id/piechart"
-                    android:layout_width="191dp"
-                    android:layout_height="170dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_weight="1"
-
-                    android:padding="6dp"
-                    android:visibility="visible"
-                    app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
                 <Button
                     android:id="@+id/button_enterweight"
                     android:layout_width="66dp"
@@ -102,9 +88,20 @@
                     android:textColor="#FFFFFF"
                     android:textSize="40sp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toEndOf="@+id/piechart"
                     app:layout_constraintTop_toTopOf="parent" />
+
+                <com.github.mikephil.charting.charts.PieChart
+                    android:id="@+id/pie_chart"
+                    android:layout_width="301dp"
+                    android:layout_height="195dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="72dp"
+                    android:layout_marginRight="72dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+
+                </com.github.mikephil.charting.charts.PieChart>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/constraintLayout2"
@@ -115,6 +112,7 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent">
+
 
                     <LinearLayout
                         android:layout_width="319dp"
@@ -180,20 +178,14 @@
                             android:textColor="#FFFFFF" />
                     </LinearLayout>
 
-                    <ScrollView
+                    <ListView
                         android:id="@+id/scrollView2"
                         android:layout_width="322dp"
                         android:layout_height="241dp"
                         android:layout_marginBottom="16dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical" />
-                    </ScrollView>
+                        app:layout_constraintStart_toStartOf="parent"/>
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -205,14 +197,16 @@
             android:id="@+id/fooddiary_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=" Food Diary"
+            android:text=" My Food Diary"
             android:textColor="#7E7E7E"
             android:textSize="36sp"
-            android:visibility="gone"
+            android:visibility="visible"
             app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.748"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.827" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>
