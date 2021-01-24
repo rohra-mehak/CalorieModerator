@@ -39,12 +39,14 @@
 
                 <TextView
                     android:id="@+id/login_tag"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="300px"
                     android:layout_marginTop="30dp"
                     android:layout_marginBottom="30dp"
+                    android:fontFamily="@font/montserrat"
+                    android:gravity="center"
                     android:paddingLeft="20px"
+                    android:paddingRight="20px"
                     android:text="Login"
                     android:textColor="#FFFFFF"
                     android:textSize="42sp" />
@@ -57,7 +59,7 @@
                     android:layout_marginBottom="16sp"
                     android:background="@drawable/textinputstyle"
                     android:textColorHint="#FFFFFF"
-                    app:boxStrokeColor="#FFFFFF"
+                    app:boxStrokeColor="#BFBFBF"
                     app:endIconTint="#FFFFFF"
                     app:passwordToggleTint="#FFFFFF"
                     app:startIconTint="#FFFFFF"
@@ -65,11 +67,11 @@
                     tools:layout_editor_absoluteY="194dp">
 
                     <AutoCompleteTextView
-                        android:id="@+id/input_weight_for_day"
+                        android:id="@+id/input_email_for_day"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="#00FFFFFF"
-                        android:hint="email"
+                        android:hint="E-mail"
                         android:inputType="textEmailAddress"
                         android:paddingLeft="20px"
                         android:textColor="#FFFFFF"
@@ -89,7 +91,7 @@
                     android:layout_marginBottom="16dp"
                     android:background="@drawable/textinputstyle"
                     android:textColorHint="#FFFFFF"
-                    app:boxStrokeColor="#FFFFFF"
+                    app:boxStrokeColor="#BFBFBF"
                     app:endIconTint="#FFFFFF"
                     app:passwordToggleTint="#FFFFFF"
                     app:startIconTint="#FFFFFF"
@@ -101,7 +103,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="#00FFFFFF"
-                        android:hint="password"
+                        android:hint="Password"
                         android:inputType="textPassword"
                         android:paddingLeft="20px"
                         android:textColor="#FFFFFF"
@@ -125,17 +127,7 @@
 
                     android:onClick="signInExistingUser"
                     android:text="Sign In"
-                    android:textColor="#ffffff" />
-
-                <TextView
-                    android:id="@+id/forgotpassword_tag"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="14dp"
-                    android:foregroundGravity="center"
-                    android:gravity="center"
-                    android:text="Forgot Password?"
-                    android:textColor="#FFFFFF"
+                    android:textColor="#ffffff"
                     android:textSize="18sp" />
 
                 <TextView
@@ -143,6 +135,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
+                    android:fontFamily="sans-serif-thin"
                     android:gravity="center"
                     android:text="Or"
                     android:textColor="#FFFFFF"
@@ -201,22 +194,12 @@
                     android:onClick="registerNewUser"
 
                     android:text="Register"
-                    android:textColor="#ffffff" />
+                    android:textColor="#ffffff"
+                    android:textSize="18sp" />
 
             </LinearLayout>
 
         </RelativeLayout>
-
-        <TextView
-            android:id="@+id/login_caloriemoderator_tag"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:paddingTop="20dp"
-            android:text="Calorie Moderator"
-            android:textColor="#FFFFFF"
-            android:textSize="40sp"
-            android:visibility="invisible" />
 
     </RelativeLayout>
 

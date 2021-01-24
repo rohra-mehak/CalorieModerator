@@ -1,68 +1,77 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:layout_marginTop="30dp"
-        app:layout_constraintBottom_toTopOf="@+id/scrollView3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+    <!-- remove stretchColumns -->
+
+    <TableRow
+        android:weightSum="5"
+        android:layout_marginTop="20dp"><!-- add -->
 
         <TextView
             android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="16dp"
+            android:layout_marginEnd="10sp"
+            android:layout_marginRight="10sp"
             android:layout_weight="1"
-            android:foregroundGravity="center"
-
+            android:gravity="center"
+            android:padding="3dip"
             android:text="food"
-            android:textColor="#FFFFFF" />
+            android:textColor="#FFFFFF"
+            android:textSize="12sp" />
 
         <TextView
             android:id="@+id/textView3"
-            android:layout_width="wrap_content"
+            android:layout_width="16dp"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="10sp"
+            android:layout_marginRight="10sp"
             android:layout_weight="1"
-            android:foregroundGravity="center"
-
+            android:gravity="center"
+            android:padding="3dip"
             android:text="protein"
-            android:textColor="#FFFFFF" />
+            android:textColor="#FFFFFF"
+            android:textSize="12sp" />
 
         <TextView
             android:id="@+id/textView4"
-            android:layout_width="wrap_content"
+            android:layout_width="16dp"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="10sp"
+            android:layout_marginRight="10sp"
             android:layout_weight="1"
-            android:foregroundGravity="center"
-
+            android:gravity="center"
+            android:padding="3dip"
             android:text="fat"
-            android:textColor="#FFFFFF" />
+            android:textColor="#FFFFFF"
+            android:textSize="12sp" />
 
         <TextView
             android:id="@+id/textView5"
-            android:layout_width="wrap_content"
+            android:layout_width="16dp"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="10sp"
+            android:layout_marginRight="10sp"
             android:layout_weight="1"
-            android:foregroundGravity="center"
-
+            android:gravity="center"
+            android:padding="3dip"
             android:text="carbs"
-            android:textColor="#FFFFFF" />
+            android:textColor="#FFFFFF"
+            android:textSize="12sp" />
 
         <TextView
             android:id="@+id/textView6"
-            android:layout_width="wrap_content"
+            android:layout_width="16dp"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="10sp"
+            android:layout_marginRight="10sp"
             android:layout_weight="1"
-            android:foregroundGravity="center"
-
+            android:gravity="center"
+            android:padding="3dip"
             android:text="kcal"
-            android:textColor="#FFFFFF" />
-    </LinearLayout>
-</LinearLayout>
+            android:textColor="#FFFFFF"
+            android:textSize="12sp" />
+
+    </TableRow>
+</TableLayout>

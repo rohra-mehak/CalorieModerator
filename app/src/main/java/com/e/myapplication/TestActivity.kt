@@ -115,7 +115,7 @@ class TestActivity : AppCompatActivity() {
     fun saveWeightEntity(){
 
         val date = dateInput.text.toString()
-        val weight = weightInput.text.toString().toInt()
+        val weight = weightInput.text.toString().toDouble()
         val userId = FirebaseAuth.getInstance().currentUser?.uid
         testEntityRepository.writeWeightByDayToUser(userId, date, weight)
     }

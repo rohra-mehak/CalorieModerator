@@ -48,7 +48,8 @@ class registerActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activty_register)
 
-
+        val actionBar = supportActionBar
+        actionBar!!.title = "Register"
 
         mEmailView = findViewById(R.id.register_email) as AutoCompleteTextView
         mPasswordView = findViewById(R.id.register_password) as EditText

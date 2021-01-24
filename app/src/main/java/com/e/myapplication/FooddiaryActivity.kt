@@ -22,6 +22,7 @@ class FooddiaryActivity : AppCompatActivity() {
     lateinit var nextButton: Button
     lateinit var bottomProfile: ImageView
     lateinit var testMenu: ImageView
+    lateinit var thirdButton : ImageView
     lateinit var resultMapForUser: MutableMap<String, ArrayList<Map<String, Any>>>
     lateinit var myFoodView: ListView
     lateinit var myPieChart: com.github.mikephil.charting.charts.PieChart
@@ -30,9 +31,13 @@ class FooddiaryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.fooddiary_layout)
 
-        nextButton = findViewById<Button>(R.id.button_enterweight)
+        val actionBar = supportActionBar
+        actionBar!!.title = "Food Diary"
+
+        nextButton = findViewById<Button>(R.id.button_addfood)
         bottomProfile = findViewById<ImageView>(R.id.bottom_profile)
         testMenu = findViewById<ImageView>(R.id.bottom_test)
+        thirdButton = findViewById<ImageView>(R.id.third_button)
         myFoodView = findViewById(R.id.scrollView2)
         resultMapForUser = mutableMapOf()
         myPieChart = findViewById(R.id.pie_chart)
@@ -45,7 +50,7 @@ class FooddiaryActivity : AppCompatActivity() {
         }
 
         testMenu.setOnClickListener {
-            val intent = Intent(this, TestActivity::class.java)
+            val intent = Intent(this, ProfileActivity::class.java)
             finish()
             startActivity(intent)
         }
@@ -59,40 +64,51 @@ class FooddiaryActivity : AppCompatActivity() {
             finish()
             startActivity(intent)
         }
+        thirdButton.setOnClickListener{
 
+            val user = FirebaseAuth.getInstance().currentUser
+            if (user != null) {
+                println(user.uid)
+            }
+            val intent = Intent(this, ReportsActivity::class.java)
+            finish()
+            startActivity(intent)
+        }
 
-
+        FirebaseAuth.getInstance().currentUser?.reload()
         val userId = FirebaseAuth.getInstance().currentUser?.uid
         println("My user ID : "+userId)
-        var database: DatabaseReference = FirebaseDatabase.getInstance().reference
-        val foodListUserRef: DatabaseReference =
-            database.child("user_info").child(userId!!).child("listOfFoodByDay")
-        foodListUserRef.addValueEventListener(object : ValueEventListener {
-            override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
-            }
-
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-                resultMapForUser = mutableMapOf()
-                for (postSnapshot in dataSnapshot.children) {
-                    println("KEY: " + postSnapshot.key)
-                    var arrayForGivenDate = resultMapForUser[postSnapshot.key]
-                    if (arrayForGivenDate == null)
-                        arrayForGivenDate = arrayListOf()
-                    for (entry in postSnapshot.children) {
-                        arrayForGivenDate.add(entry.value as Map<String, Any>)
-                    }
-                    println("array" + arrayForGivenDate)
-                    postSnapshot.key?.let { resultMapForUser.put(it, arrayForGivenDate) }
-                    println("result"+resultMapForUser)
-                    // list in listView Myfood diary
-                    setListByDate()
-                        // and the pie chart
-                    setPieChart(pieChartEntries())
+        if(userId != null){
+            var database: DatabaseReference = FirebaseDatabase.getInstance().reference
+            val foodListUserRef: DatabaseReference =
+                    database.child("user_info").child(userId!!).child("listOfFoodByDay")
+            foodListUserRef.addValueEventListener(object : ValueEventListener {
+                override fun onCancelled(error: DatabaseError) {
+                    TODO("Not yet implemented")
                 }
 
-            }
-        })
+                override fun onDataChange(dataSnapshot: DataSnapshot) {
+                    resultMapForUser = mutableMapOf()
+                    for (postSnapshot in dataSnapshot.children) {
+                        println("KEY: " + postSnapshot.key)
+                        var arrayForGivenDate = resultMapForUser[postSnapshot.key]
+                        if (arrayForGivenDate == null)
+                            arrayForGivenDate = arrayListOf()
+                        for (entry in postSnapshot.children) {
+                            arrayForGivenDate.add(entry.value as Map<String, Any>)
+                        }
+                        println("array" + arrayForGivenDate)
+                        postSnapshot.key?.let { resultMapForUser.put(it, arrayForGivenDate) }
+                        println("result"+resultMapForUser)
+                        // list in listView Myfood diary
+                        setListByDate()
+                        // and the pie chart
+                        setPieChart(pieChartEntries())
+                    }
+
+                }
+            })
+        }
 
 
     }

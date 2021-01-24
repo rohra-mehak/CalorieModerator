@@ -6,13 +6,13 @@ import com.google.firebase.database.IgnoreExtraProperties
 @IgnoreExtraProperties
 class WeightByDateEntity {
     var date: String? = ""
-    var weight: Int = 0
+    var weight: Double = 0.0
 
     constructor(){
 
     }
 
-    constructor(date: String?, weight: Int){
+    constructor(date: String?, weight: Double){
         this.date = date
         this.weight = weight
     }

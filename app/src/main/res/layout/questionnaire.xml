@@ -115,7 +115,7 @@
                     android:paddingLeft="20dp"
                     android:paddingRight="20dp"
                     android:text="Gender"
-                    android:textAllCaps="true"
+                    android:textAllCaps="false"
                     android:textColor="#FFFFFF"
                     android:textSize="18sp" />
 

@@ -8,15 +8,19 @@ import android.text.TextWatcher
 import android.widget.AutoCompleteTextView
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.e.myapplication.repository.TestRepository
 import com.google.firebase.auth.FirebaseAuth
+import kotlinx.android.synthetic.main.fooddiary_layout.*
 import java.text.DateFormatSymbols
 import java.util.*
 
 class EnterweightActivity : AppCompatActivity() {
     lateinit var acceptWeightButton: Button
     lateinit var bottomFood: ImageView
+    lateinit var testMenu: ImageView
+    lateinit var thirdButton : ImageView
     lateinit var buttonShowWeight: Button
     lateinit var buttonPickDateForWeight: Button
     lateinit var inputWeight : AutoCompleteTextView
@@ -24,13 +28,19 @@ class EnterweightActivity : AppCompatActivity() {
 
     lateinit var dateToSave: String
 
+
+
     protected  override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.enterweight_layout)
+        val actionBar = supportActionBar
+        actionBar!!.title = "Enter Your Weight"
 
         testEntityRepository = TestRepository()
 
         bottomFood = findViewById<ImageView>(R.id.bottom_food)
+        testMenu = findViewById<ImageView>(R.id.bottom_test)
+        thirdButton = findViewById<ImageView>(R.id.third_button)
         acceptWeightButton = findViewById<Button>(R.id.button_enterweight)
         buttonShowWeight = findViewById<Button>(R.id.button_show_weight)
         inputWeight = findViewById<AutoCompleteTextView>(R.id.input_weight_for_day)
@@ -42,6 +52,20 @@ class EnterweightActivity : AppCompatActivity() {
             finish()
             startActivity(intent)
         }
+
+        testMenu.setOnClickListener {
+            val intent = Intent(this, ProfileActivity::class.java)
+            finish()
+            startActivity(intent)
+        }
+
+        thirdButton.setOnClickListener{
+
+            val intent = Intent(this, ReportsActivity::class.java)
+            finish()
+            startActivity(intent)
+        }
+
 
         val c = Calendar.getInstance()
         val year = c.get(Calendar.YEAR)
@@ -90,13 +114,18 @@ class EnterweightActivity : AppCompatActivity() {
             println(weightToSave)
             println(userId)
 
-            testEntityRepository.writeWeightByDayToUser(userId, dateToSave, weightToSave.toString().toInt())
+            val weight = weightToSave.toString().toDouble()
 
-
-            val intent = Intent(this, FooddiaryActivity::class.java)
-            finish()
-            startActivity(intent)
+            if(weight < 10.0 || weight > 200){
+                Toast.makeText(this, "Please enter correct weight! ", Toast.LENGTH_SHORT)
+                    .show()
+            } else{
+                testEntityRepository.writeWeightByDayToUser(userId, dateToSave, weightToSave.toString().toDouble())
+                Toast.makeText(this, "Weight saved! ", Toast.LENGTH_SHORT)
+                    .show()
+            }
         }
+
 
 //        nextButton = findViewById<Button>(R.id.addfood_button)
 //

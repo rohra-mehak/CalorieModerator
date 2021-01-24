@@ -54,8 +54,8 @@
                     android:layout_marginBottom="10dp"
                     android:paddingLeft="20dp"
                     android:paddingRight="20dp"
-                    android:text="Your dob"
-                    android:textAllCaps="true"
+                    android:text="Your Date of Birth"
+                    android:textAllCaps="false"
                     android:textColor="#FFFFFF"
                     android:textSize="18sp" />
 

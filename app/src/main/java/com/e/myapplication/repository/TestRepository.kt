@@ -33,7 +33,7 @@ class TestRepository {
         entityRef.child(userId!!).setValue(toStore)
     }
 
-    fun writeWeightByDayToUser(userId: String?, date: String?, weight: Int){
+    fun writeWeightByDayToUser(userId: String?, date: String?, weight: Double){
         database = FirebaseDatabase.getInstance().reference
         val weightListRef: DatabaseReference = database.child("user_info").child(userId!!).child("weightByDate")
         val entityId = database.push().key

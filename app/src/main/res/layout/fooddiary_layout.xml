@@ -42,6 +42,7 @@
                 android:src="@drawable/food_icon" />
 
             <ImageView
+                android:id="@+id/third_button"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_centerHorizontal="true"
@@ -62,8 +63,8 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout"
-            android:layout_width="0dp"
-            android:layout_height="576dp"
+            android:layout_width="389dp"
+            android:layout_height="649dp"
             android:background="@drawable/maingreyrectangle"
             app:layout_constraintBottom_toTopOf="@+id/linearLayout"
             app:layout_constraintEnd_toEndOf="parent"
@@ -71,46 +72,60 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/constraintLayout3"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="382dp"
+                android:layout_height="623dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                tools:layout_editor_absoluteX="-56dp">
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
                 <Button
-                    android:id="@+id/button_enterweight"
-                    android:layout_width="66dp"
-                    android:layout_height="66dp"
-                    android:layout_marginTop="128dp"
+                    android:id="@+id/button_addfood"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_marginTop="180dp"
+                    android:layout_marginEnd="44dp"
+                    android:layout_marginRight="44dp"
                     android:background="@drawable/orangebutton"
                     android:foregroundGravity="center_vertical|center|center_horizontal"
                     android:gravity="center"
                     android:text="+"
                     android:textColor="#FFFFFF"
                     android:textSize="40sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/pie_chart"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintHorizontal_bias="0.45"
+                    app:layout_constraintStart_toEndOf="@+id/pie_chart"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="1.0" />
 
                 <com.github.mikephil.charting.charts.PieChart
                     android:id="@+id/pie_chart"
-                    android:layout_width="301dp"
-                    android:layout_height="195dp"
-                    android:layout_marginTop="4dp"
-                    android:layout_marginEnd="72dp"
-                    android:layout_marginRight="72dp"
+                    android:layout_width="223dp"
+                    android:layout_height="194dp"
+                    app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.755">
 
 
                 </com.github.mikephil.charting.charts.PieChart>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/constraintLayout2"
-                    android:layout_width="340dp"
-                    android:layout_height="350dp"
-                    android:layout_marginBottom="16dp"
+                    android:layout_width="323dp"
+                    android:layout_height="283dp"
+                    android:layout_marginStart="36dp"
+                    android:layout_marginLeft="36dp"
+                    android:layout_marginEnd="36dp"
+                    android:layout_marginRight="36dp"
+                    android:layout_marginBottom="36dp"
                     android:background="@drawable/foodcontainerstyle"
+                    android:padding="5dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.461"
                     app:layout_constraintStart_toStartOf="parent">
 
 
@@ -180,33 +195,17 @@
 
                     <ListView
                         android:id="@+id/scrollView2"
-                        android:layout_width="322dp"
-                        android:layout_height="241dp"
-                        android:layout_marginBottom="16dp"
+                        android:layout_width="310dp"
+                        android:layout_height="244dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"/>
+                        app:layout_constraintStart_toStartOf="parent" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <TextView
-            android:id="@+id/fooddiary_label"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=" My Food Diary"
-            android:textColor="#7E7E7E"
-            android:textSize="36sp"
-            android:visibility="visible"
-            app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.748"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.827" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>

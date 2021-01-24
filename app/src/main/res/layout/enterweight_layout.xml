@@ -41,6 +41,7 @@
                 android:src="@drawable/food_icon" />
 
             <ImageView
+                android:id="@+id/third_button"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_centerHorizontal="true"
@@ -50,6 +51,7 @@
                 android:src="@drawable/recordweight_icon" />
 
             <ImageView
+                android:id="@+id/bottom_test"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_centerHorizontal="true"
@@ -60,8 +62,8 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout"
-            android:layout_width="0dp"
-            android:layout_height="576dp"
+            android:layout_width="392dp"
+            android:layout_height="673dp"
             android:background="@drawable/maingreyrectangle"
             app:layout_constraintBottom_toTopOf="@+id/linearLayout"
             app:layout_constraintEnd_toEndOf="parent"
@@ -72,7 +74,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                tools:layout_editor_absoluteX="0dp">
+                tools:layout_editor_absoluteX="-59dp">
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/login_emailinput"
@@ -83,10 +85,11 @@
                     android:textColorHint="#FFFFFF"
                     app:boxStrokeColor="#FFFFFF"
                     app:endIconTint="#FFFFFF"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.498"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/button_pick_date_for_weight"
+                    app:layout_constraintVertical_bias="0.0"
                     app:passwordToggleTint="#FFFFFF"
                     app:startIconTint="#FFFFFF">
 
@@ -97,22 +100,19 @@
                         android:background="#00FFFFFF"
                         android:gravity="center"
                         android:hint="Kg"
-                        android:inputType="number"
+                        android:inputType="numberDecimal"
                         android:paddingLeft="20px"
                         android:textColor="#FFFFFF"
                         android:textColorHighlight="#FFFFFF"
                         android:textColorHint="#FFFFFF"
-                        android:textColorLink="#FFFFFF"
-                        tools:layout_editor_absoluteX="-4dp"
-                        tools:layout_editor_absoluteY="126dp" />
-
+                        android:textColorLink="#FFFFFF" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <Button
                     android:id="@+id/button_enterweight"
                     android:layout_width="291dp"
                     android:layout_height="53dp"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="24dp"
                     android:background="@drawable/bluebutton"
                     android:foregroundGravity="center_vertical|center|center_horizontal"
                     android:gravity="center"
@@ -120,6 +120,7 @@
                     android:textColor="#FFFFFF"
                     android:textSize="24sp"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.495"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/login_emailinput" />
 
@@ -127,12 +128,12 @@
                     android:id="@+id/constraintLayout4"
                     android:layout_width="190dp"
                     android:layout_height="190dp"
-                    android:layout_marginTop="40dp"
                     android:background="@drawable/circlegradientweight"
+                    app:layout_constraintBottom_toTopOf="@+id/button_pick_date_for_weight"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.497"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.681">
 
                     <Button
                         android:id="@+id/button_show_weight"
@@ -153,14 +154,16 @@
                     android:id="@+id/button_pick_date_for_weight"
                     android:layout_width="309dp"
                     android:layout_height="45dp"
-                    android:layout_marginTop="36dp"
                     android:background="@drawable/lightfoodcontainerstyle"
                     android:hint="enter date"
                     android:textColor="#5A5858"
                     android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.506"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout4" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.557" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

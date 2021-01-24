@@ -1,15 +1,13 @@
 package com.e.myapplication
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import android.view.KeyEvent
 import android.view.View
 import android.view.inputmethod.EditorInfo
-import android.widget.AutoCompleteTextView
-import android.widget.EditText
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.tasks.OnCompleteListener
@@ -19,13 +17,18 @@ class loginActivty: AppCompatActivity() {
 
 
     private var mEmailView: AutoCompleteTextView? = null
+
     private var mPasswordView: EditText? = null
     private lateinit var mAuth: FirebaseAuth
+    lateinit var signIn : Button
+   // lateinit var  sp : SharedPreferences
 
     protected  override fun onCreate(savedInstanceState:Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-        mEmailView = findViewById(R.id.input_weight_for_day) as AutoCompleteTextView
+        val actionBar = supportActionBar
+        actionBar!!.title = "Calorie Counter Login"
+        mEmailView = findViewById(R.id.input_email_for_day) as AutoCompleteTextView
         mPasswordView = findViewById(R.id.login_passinput) as AutoCompleteTextView
         mPasswordView!!.setOnEditorActionListener(object: TextView.OnEditorActionListener {
             override fun onEditorAction(textView:TextView, id:Int, keyEvent: KeyEvent):Boolean {
@@ -39,15 +42,33 @@ class loginActivty: AppCompatActivity() {
         })
         // TODO: Grab an instance of FirebaseAuth
         mAuth = FirebaseAuth.getInstance()
+
+        signIn = findViewById<Button>(R.id.login_sign_in)
+        
+       /*// sp = getSharedPreferences("signIn" , MODE_PRIVATE)
+        if(sp.getBoolean("logged",false)){
+            val intent = Intent(this, com.e.myapplication.FooddiaryActivity::class.java)
+            finish()
+            startActivity(intent)
+        }*/
+
+//        signIn.setOnClickListener(View.OnClickListener {  val intent = Intent(this, com.e.myapplication.FooddiaryActivity::class.java)
+//            finish()
+//            startActivity(intent)
+//            //sp.edit().putBoolean("logged",true).apply()})
+//
+//
     }
+
+
     // Executed when Sign in button pressed
     fun signInExistingUser(v: View) {
-
+        //attemptLogin()
         val intent = Intent(this, com.e.myapplication.FooddiaryActivity::class.java)
         finish()
         startActivity(intent)
         // TODO uncomment
-        // attemptLogin()
+        attemptLogin()
     }
     // Executed when Register button pressed
     fun registerNewUser(v:View) {
@@ -71,7 +92,7 @@ class loginActivty: AppCompatActivity() {
                 showAlert("Problem signing in , please try again later.")
             }
             else  {
-                val intent = Intent(this, com.e.myapplication.MainActivity::class.java)
+                val intent = Intent(this, com.e.myapplication.FooddiaryActivity::class.java)
                 finish()
                 startActivity(intent)
             }

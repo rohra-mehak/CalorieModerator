@@ -15,6 +15,8 @@ import kotlin.collections.ArrayList
 
 
 class AddfoodActivity : AppCompatActivity() {
+
+
     lateinit var searchView: AutoCompleteTextView
     lateinit var quantityView: AutoCompleteTextView
     var fetchFood: Button? = null
@@ -26,7 +28,10 @@ class AddfoodActivity : AppCompatActivity() {
 
     protected override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_addfood)
+        setContentView(R.layout.addfood_layout)
+
+        val actionBar = supportActionBar
+        actionBar!!.title = "Add Food To Your Diary"
 
         bottomFood = findViewById<ImageView>(R.id.bottom_food)
         searchView = findViewById(R.id.search_input)
@@ -137,6 +142,17 @@ class AddfoodActivity : AppCompatActivity() {
             return newList
 
     }
+    private fun fetchRequestedFoodFromAllFoods(search: String, allMyFoodList: ArrayList<Map<String, Any>>) : ArrayList<Any>{
+        var newList: ArrayList<Any> = arrayListOf()
+        for (myList in allMyFoodList) {
+            var v = myList["name"].toString()
+            if (v.contains(search, true)) {
+                newList.add(myList)
+                println(newList)
+            }
+        }
+        return newList
+    }
 
 
      // alert for confirmation for adding food to db
@@ -161,10 +177,6 @@ class AddfoodActivity : AppCompatActivity() {
 
 
     }
-
-
-
-
 
 
 //Testing , does not work // do not remove this code , nor uncomment

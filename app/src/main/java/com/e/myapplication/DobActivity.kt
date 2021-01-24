@@ -18,6 +18,9 @@ class DobActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.dob_layout)
 
+        val actionBar = supportActionBar
+        actionBar!!.title = "Initial Questionnaire"
+
         datePicker = findViewById<DatePicker>(R.id.datePicker1)
         nextButton = findViewById<Button>(R.id.submit_dob_button)
 

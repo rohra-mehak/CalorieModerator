@@ -24,7 +24,8 @@ class googleSignIn : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activty_register)
-
+        val actionBar = supportActionBar
+        actionBar!!.title = "Google Sign In"
         configureGoogleSignIn()
         firebaseAuth = FirebaseAuth.getInstance()
         setupUI()

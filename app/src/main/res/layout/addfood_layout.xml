@@ -41,6 +41,7 @@
                 android:src="@drawable/food_icon" />
 
             <ImageView
+                android:id="@+id/third_button"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_centerHorizontal="true"
@@ -50,6 +51,7 @@
                 android:src="@drawable/recordweight_icon" />
 
             <ImageView
+                android:id="@+id/bottom_test"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_centerHorizontal="true"
@@ -61,7 +63,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout"
             android:layout_width="0dp"
-            android:layout_height="576dp"
+            android:layout_height="wrap_content"
             android:background="@drawable/maingreyrectangle"
             app:layout_constraintBottom_toTopOf="@+id/linearLayout"
             app:layout_constraintEnd_toEndOf="parent"
@@ -69,30 +71,33 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/constraintLayout3"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                tools:layout_editor_absoluteX="0dp">
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/constraintLayout2"
-                    android:layout_width="348dp"
-                    android:layout_height="349dp"
+                    android:layout_width="321dp"
+                    android:layout_height="410dp"
                     android:layout_marginBottom="16dp"
                     android:background="@drawable/foodcontainerstyle"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent">
 
-
                     <LinearLayout
                         android:id="@+id/linearLayout2"
-                        android:layout_width="316dp"
-                        android:layout_height="29dp"
+                        android:layout_width="319dp"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="10dp"
                         android:orientation="horizontal"
                         app:layout_constraintBottom_toTopOf="@+id/scrollView3"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent">
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView">
 
                         <TextView
                             android:id="@+id/textView2"
@@ -152,37 +157,37 @@
 
                     <ListView
                         android:id="@+id/scrollView3"
-                        android:layout_width="324dp"
-                        android:layout_height="263dp"
+                        android:layout_width="315dp"
+                        android:layout_height="337dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent" />
+                        app:layout_constraintStart_toStartOf="parent"/>
 
                     <TextView
-                        android:id="@+id/recommended"
-                        android:layout_width="253dp"
-                        android:layout_height="28dp"
-                        android:text="Recommended"
+                        android:id="@+id/textView"
+                        android:layout_width="205dp"
+                        android:layout_height="37dp"
+                        android:layout_marginTop="16dp"
+                        android:text="search results"
                         android:textColor="#FFFFFF"
-                        android:textSize="24sp"
-                        android:textStyle="bold"
-                        tools:layout_editor_absoluteX="16dp"
-                        tools:layout_editor_absoluteY="16dp" />
-
+                        android:textSize="30sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.504"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/searchfood_input"
-                    android:layout_width="337dp"
-                    android:layout_height="46dp"
-                    android:layout_marginTop="68dp"
+                    android:layout_width="314dp"
+                    android:layout_height="45dp"
                     android:background="@drawable/textinputstyle"
                     android:textColorHint="#FFFFFF"
                     app:boxStrokeColor="#FFFFFF"
                     app:endIconTint="#FFFFFF"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.494"
+                    app:layout_constraintHorizontal_bias="0.493"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:passwordToggleTint="#FFFFFF"
@@ -205,55 +210,61 @@
 
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/login_emailinput"
-                    android:layout_width="295dp"
-                    android:layout_height="44dp"
-                    android:layout_marginTop="20dp"
-                    android:background="@drawable/textinputstyle"
-                    android:textColorHint="#FFFFFF"
-                    app:boxStrokeColor="#FFFFFF"
-                    app:endIconTint="#FFFFFF"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="314dp"
+                    android:layout_height="45dp"
+                    android:layout_margin="10dp"
+                    app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.311"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/searchfood_input"
-                    app:passwordToggleTint="#FFFFFF"
-                    app:startIconTint="#FFFFFF">
+                    app:layout_constraintVertical_bias="0.361">
 
-                    <AutoCompleteTextView
-                        android:id="@+id/quantity_input"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="#00FFFFFF"
-                        android:hint="Quantity"
-                        android:inputType="textEmailAddress"
-                        android:paddingLeft="20px"
-                        android:textColor="#FFFFFF"
-                        android:textColorHighlight="#FFFFFF"
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/quantityFood_input"
+                        android:layout_width="257dp"
+                        android:layout_height="47dp"
+                        android:background="@drawable/textinputstyle"
                         android:textColorHint="#FFFFFF"
-                        android:textColorLink="#FFFFFF"
-                        tools:layout_editor_absoluteX="-4dp"
-                        tools:layout_editor_absoluteY="126dp" />
+                        app:boxStrokeColor="#FFFFFF"
+                        app:endIconTint="#FFFFFF"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:passwordToggleTint="#FFFFFF"
+                        app:startIconTint="#FFFFFF">
 
-                </com.google.android.material.textfield.TextInputLayout>
+                        <AutoCompleteTextView
+                            android:id="@+id/quantity_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#00FFFFFF"
+                            android:hint="Quantity"
+                            android:inputType="textEmailAddress"
+                            android:paddingLeft="20px"
+                            android:textColor="#FFFFFF"
+                            android:textColorHighlight="#FFFFFF"
+                            android:textColorHint="#FFFFFF"
+                            android:textColorLink="#FFFFFF"
+                            tools:layout_editor_absoluteX="-4dp"
+                            tools:layout_editor_absoluteY="126dp" />
 
-                <Button
-                    android:id="@+id/fetch_food_button"
-                    android:layout_width="49dp"
-                    android:layout_height="49dp"
-                    android:layout_marginTop="16dp"
-                    android:background="@drawable/orangebutton"
-                    android:foregroundGravity="center_vertical|center|center_horizontal"
-                    android:gravity="center"
-                    android:text=">"
-                    android:textColor="#FFFFFF"
-                    android:textSize="30sp"
+                    </com.google.android.material.textfield.TextInputLayout>
 
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.14"
-                    app:layout_constraintStart_toEndOf="@+id/login_emailinput"
-                    app:layout_constraintTop_toBottomOf="@+id/searchfood_input" />
+                    <Button
+                        android:id="@+id/fetch_food_button"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:background="@drawable/orangebutton"
+                        android:foregroundGravity="center_vertical|center|center_horizontal"
+                        android:gravity="center"
+                        android:text=">"
+                        android:textColor="#FFFFFF"
+                        android:textSize="30sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -264,16 +275,30 @@
             android:id="@+id/fooddiary_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Add Food"
+            android:text=" Food Diary"
             android:textColor="#7E7E7E"
             android:textSize="50sp"
-            android:visibility="visible"
+            android:visibility="gone"
             app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:foregroundGravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:text="Add a Food \nTo Your Diary"
+            android:textColor="#FFFFFF"
+            android:textSize="36sp"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.502"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.692" />
+            app:layout_constraintVertical_bias="0.866" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>

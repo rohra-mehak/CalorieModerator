@@ -25,7 +25,8 @@ class QuestionnaireActivity : AppCompatActivity() {
     protected  override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.questionnaire)
-
+        val actionBar = supportActionBar
+        actionBar!!.title = "Initial Questionnaire"
         testEntityRepository = TestRepository()
 
         nextButton = findViewById<Button>(R.id.next_questionaire_button)
